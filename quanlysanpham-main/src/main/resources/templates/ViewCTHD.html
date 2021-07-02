@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;">
+    <div class="row" style="border: 1px darkgrey solid; border-radius: 10px;width: 80%; margin: 0 auto; padding: 20px;">
+        <div class="col-sm-12">
+            <h3>View Chi Tiết Hóa Đơn</h3>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">MA_CTHD</th>
+                        <th scope="col">MAHD</th>
+                        <th scope="col">MASP</th>
+                        <th scope="col">MACK</th>
+                        <th scope="col">SOLUONG</th>
+                        <th scope="col">THANHTIEN</th>
+                        <th scope="col">DELTE</th>
+                        <th scope="col">EDIT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="cthd:${cthd}">
+                        <td th:text="${cthd.maCthd}"></td>
+                        <td th:text="${cthd.maHd}"></td>
+                        <td th:text="${cthd.maSp}"></td>
+                        <td th:text="${cthd.maCk}"></td>
+                        <td th:text="${cthd.soLuong}"></td>
+                        <td th:text="${cthd.thanhTien}"></td>
+                        <td><a th:href="@{/deleteCthd?maCthd={maCthd}(maCthd=${cthd.maCthd})}">Delete</a>
+                        <td><a th:href="@{/UpdateHd/{maCthd}(maCthd=${cthd.maCthd})}">edit</a>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+        </div>
+    </div>
+</body>
+</html>

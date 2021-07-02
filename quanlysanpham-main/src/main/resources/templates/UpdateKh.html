@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1 style="text-align: center">Update Khách Hàng</h1>
+<div class="container" style="margin-top: 50px;">
+    <div class="row" style="border: 1px darkgrey solid; border-radius: 10px;width: 50%; margin: 0 auto; padding: 20px;">
+        <div class="col-sm-12">
+            <h3>Update Khách Hàng</h3>
+            <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+            <form action="#" th:action="@{/EditKh}" th:object="${khachhang}" method="post">
+                <input type="hidden" th:field="*{maKh}">
+                <div class="form-group">
+                    <label>tenKh</label>
+                    <input type="text" th:field="*{tenKh}" class="form-control" placeholder="tenKh">
+                </div>
+                <div class="form-group">
+                    <label>diaChi</label>
+                    <input type="text" th:field="*{diaChi}" class="form-control" placeholder="diaChi">
+                </div>
+                <div class="form-group">
+                    <label>SDT</label>
+                    <input type="text" th:field="*{SDT}" class="form-control" placeholder="SDT">
+                </div>
+                <div class="form-group">
+                    <label>soTK</label>
+                    <input type="text" th:field="*{soTK}" class="form-control" placeholder="soTK">
+                </div>
+                <div class="form-group">
+                    <label>soDuTK</label>
+                    <input type="number" th:field="*{soDuTK}" class="form-control" placeholder="soDuTK">
+                </div>
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

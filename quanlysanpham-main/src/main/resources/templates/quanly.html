@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="eng" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manager</title>
+</head>
+<body>
+<div>
+<thead>
+	<tr>
+    <p th:text="${session.admin}"></p>
+    <th th:href="@{/logout}" th:text="${logout}"></th></br>
+    <th th:href="@{/ViewSP}"> Xem Sản Phẩm</th>
+    <th th:href="@{/addSP}"> thêm Sản Phẩm</th>
+    <th th:href="@{/ViewKH}">Xem Khach Hang</th>
+    <th th:href="@{/addKH}">Thêm Khach Hang</th>
+    <th th:href="@{/searchkh}">Tìm Kiếm Khach Hang</th>
+    <th th:href="@{/addMoney}">Nộp tiền</th>
+    <th th:href="@{/ViewHD}">Xem Hóa Đơn</th>
+	</tr>
+	</thead>
+</div>
+</body>
+</html>

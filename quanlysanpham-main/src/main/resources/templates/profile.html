@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;">
+    <div class="row" style="border: 1px darkgrey solid; border-radius: 10px;width: 80%; margin: 0 auto; padding: 20px;">
+        <div class="col-sm-12">
+            <h3>My Account</h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">MAKH</th>
+                    <th scope="col">TENKH</th>
+                    <th scope="col">DIACHI</th>
+                    <th scope="col">SDT</th>
+                    <th scope="col">SOTK</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">SODUTK</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="khachhang:${khachhang}">
+                    <td th:text="${khachhang.maKh}"></td>
+                    <td th:text="${khachhang.tenKh}"></td>
+                    <td th:text="${khachhang.diaChi}"></td>
+                    <td th:text="${khachhang.SDT}"></td>
+                    <td th:text="${khachhang.soTK}"></td>
+                    <td th:text="${khachhang.passWord}"></td>
+                    <td th:text="${khachhang.soDuTK}"></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

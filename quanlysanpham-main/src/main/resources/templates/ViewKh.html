@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;">
+    <div class="row" style="border: 1px darkgrey solid; border-radius: 10px;width: 80%; margin: 0 auto; padding: 20px;">
+        <div class="col-sm-12">
+            <h3>Danh Sách Khách Hàng</h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Mã KH</th>
+                    <th scope="col">Tên KH</th>
+                    <th scope="col">Địa Chỉ</th>
+                    <th scope="col">SDT</th>
+                    <th scope="col">Số TK</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Số dư</th>
+                    <th scope="col">     </th>
+                    <th scope="col">     </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="khachhang:${khachhang}">
+                    <td th:text="${khachhang.maKh}"></td>
+                    <td th:text="${khachhang.tenKh}"></td>
+                    <td th:text="${khachhang.diaChi}"></td>
+                    <td th:text="${khachhang.SDT}"></td>
+                    <td th:text="${khachhang.soTK}"></td>
+                    <td th:text="${khachhang.passWord}"></td>
+                    <td th:text="${khachhang.soDuTK}"></td>
+                    <td><a th:href="@{/deleteKh?makh={maKh}(maKh=${khachhang.maKh})}">Delete</a>
+                    <td><a th:href="@{/UpdateKh/{maKh}(maKh=${khachhang.maKh})}">edit</a>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;">
+    <div class="row" style="border: 1px darkgrey solid; border-radius: 10px;width: 80%; margin: 0 auto; padding: 20px;">
+        <div class="col-sm-12">
+            <h3>View Hóa Đơn</h3>
+            <form th:action="@{/ViewHd}" th:object="${hoadon}" method="post">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">MAHD</th>
+                    <th scope="col">MAKH</th>
+                    <th scope="col">NGAYLAP</th>
+                    <th scope="col">TONGTIEN</th>
+                    <th scope="col">VIEW</th>
+                    <th scope="col">DELTE</th>
+                    <th scope="col">EDIT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="hoadon:${hoadon}">
+                    <td th:text="${hoadon.maHd}"></td>
+                    <td th:text="${hoadon.maKh}"></td>
+                    <td th:text="${hoadon.ngayLap}"></td>
+                    <td th:text="${hoadon.tongTien}"></td>
+                    <td><a th:href="@{/ViewCTHD/{maHd}(maHd=${hoadon.maHd})}">View</a>
+                    <td><a th:href="@{/deleteHd?mahd={maHd}(maHd    =${hoadon.maHd})}">Delete</a>
+                    <td><a th:href="@{/UpdateHd/{maHd}(maHd=${hoadon.maHd})}">edit</a>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
